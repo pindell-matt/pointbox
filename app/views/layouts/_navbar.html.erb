@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul>
+      <li><%= link_to "PointBox", root_path %></li>
+      <li style="float:right">
+        <% if session[:user_id] %>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav">
+    </ul>
+
+  </div>
+
+</nav>

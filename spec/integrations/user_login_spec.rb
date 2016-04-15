@@ -11,8 +11,8 @@ RSpec.feature "User logs in to website" do
     click_button "Login"
 
     expect(page).to have_content("User Show Page")
-    # expect(page).to have_content("Log Out")
-    # expect(page).to have_content("My Spent Points")
-    # expect(page).to have_content("My Unspent Points")
+    expect(page).to have_content("Logout")
+    expect(page).to have_content("My Spent Points")
+    expect(page).to have_content("My Unspent Points")
   end
 end

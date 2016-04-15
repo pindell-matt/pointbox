@@ -30,3 +30,12 @@ li a:hover {
   font-size: 20px;
   line-height: 20px;
 }
+
+#flash_notice {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  border: 2px solid #00b200;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+}

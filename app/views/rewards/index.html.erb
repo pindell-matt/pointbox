@@ -1,0 +1,8 @@
+<h1>Rewards Shop</h1>
+
+<% @rewards.each do |reward| %>
+    <div class="reward">
+      <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %>
+      <button type="button" name="buy_reward">Purchase</button>
+    </div>
+<% end %>

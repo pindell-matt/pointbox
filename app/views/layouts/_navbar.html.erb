@@ -3,7 +3,8 @@
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul>
-      <li><%= link_to "PointBox", root_path %></li>
+      <li><%= link_to "PointBox Home", root_path %></li>
+      <li><%= link_to "Rewards Shop", rewards_path %></li>
       <li style="float:right">
         <% if session[:user_id] %>
           <%= link_to "Logout", logout_path, method: :delete %>
@@ -17,5 +18,4 @@
     </ul>
 
   </div>
-
 </nav>

@@ -19,11 +19,11 @@ RSpec.feature "User logs in to website" do
       user = create(:user)
 
       visit login_path
-      fill_in "username", with: "Clarence"
+      fill_in "username", with: user.username
       fill_in "password", with: "password"
       click_button "Login"
 
-      expect(page).to have_content("Welcome, Clarence")
+      expect(page).to have_content("Welcome, #{user.username}")
       expect(page).to have_content("Logout")
       expect(page).to have_content("My Spent Points")
       expect(page).to have_content("My Unspent Points")

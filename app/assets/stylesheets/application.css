@@ -39,3 +39,8 @@ li a:hover {
   font-size: 20px;
   line-height: 20px;
 }
+
+#reward {
+  float: left;
+
+}

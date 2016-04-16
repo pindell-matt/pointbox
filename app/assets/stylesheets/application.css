@@ -40,11 +40,6 @@ li a:hover {
   line-height: 20px;
 }
 
-#reward {
-  float: left;
-}
-
-.button_to {
-  color: #b20000;
-  /*add any other properties you want to style*/
+.reward_buttons {
+  display: inline-block;
 }

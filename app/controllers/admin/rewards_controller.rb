@@ -1,5 +1,5 @@
 class Admin::RewardsController < Admin::BaseController
-  before_action :set_reward, only: [:show, :update, :destroy]
+  before_action :set_reward, only: [:show, :edit, :update, :destroy]
 
   def index
     @rewards = Reward.all
@@ -19,7 +19,15 @@ class Admin::RewardsController < Admin::BaseController
     end
   end
 
+  def edit
+  end
+
   def update
+    if @reward.update(reward_params)
+      redirect_to admin_rewards_path
+    else
+      render :edit
+    end
   end
 
   def destroy

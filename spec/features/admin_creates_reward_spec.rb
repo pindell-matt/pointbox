@@ -12,11 +12,13 @@ RSpec.feature "Admin creates reward" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    visit new_admin_reward_path
+    click_link "Create New Reward"
+
     fill_in "name", with: reward.name
     fill_in "value", with: reward.value
     click_button "Create Reward"
 
-    # expect(page).to have_content("Reward Created!")
+    # save_and_open_page
+    expect(page).to have_content("Reward Created!")
   end
 end

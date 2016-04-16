@@ -1,0 +1,8 @@
+<h1>Create New Reward</h1>
+
+<%= form_for @reward do |f| %>
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.text_field :value, placeholder: "value" %>
+
+  <%= f.submit %>
+<% end %>

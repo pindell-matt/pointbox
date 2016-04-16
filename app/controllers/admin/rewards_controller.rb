@@ -24,6 +24,7 @@ class Admin::RewardsController < Admin::BaseController
 
   def update
     if @reward.update(reward_params)
+      flash[:notice] = "Reward Updated!"
       redirect_to admin_rewards_path
     else
       render :edit

@@ -1,6 +1,6 @@
 <h1>User <%= @user.id %>: <%= @user.username %></h1>
 
-<h3>Total Points</h3>
+<h3>Total Points: <%= @user.points.sum(:value) %></h3>
 <h3>Spent Points</h3>
 
 <h3>Rewards</h3>

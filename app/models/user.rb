@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true
 
    enum role: %w(default admin)
+
+   def total_points
+     Point.find_by(user_id: id).value
+   end
 end

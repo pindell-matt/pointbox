@@ -1,0 +1,9 @@
+<h1>Users Index</h1>
+
+<h3>Implement Full CRUD</h3>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= user.id %>: <%= link_to user.username, admin_user_path(user) %>: <%= user.points.sum(:value) %> points</li>
+  <% end %>
+</ul>

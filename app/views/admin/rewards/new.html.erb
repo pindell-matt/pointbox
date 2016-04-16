@@ -1,8 +1,8 @@
 <h1>Create New Reward</h1>
 
-<%= form_for @reward do |f| %>
+<%= form_for @reward, url:{:controller=>'admin/rewards', :action=>'create'} do |f| %>
   <%= f.text_field :name, placeholder: "name" %>
   <%= f.text_field :value, placeholder: "value" %>
 
-  <%= f.submit %>
+  <%= f.submit "Create Reward" %>
 <% end %>

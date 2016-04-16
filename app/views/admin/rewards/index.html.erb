@@ -1,0 +1,9 @@
+<h1>Rewards Index</h1>
+
+<% @rewards.each do |reward| %>
+    <div class="reward">
+      <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %>
+      <button type="button" name="buy_reward">Edit</button>
+      <%= link_to "Delete", admin_reward_path(reward), method: :delete %>
+    </div>
+<% end %>

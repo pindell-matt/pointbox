@@ -1,21 +1,23 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
-  </div>
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul>
-      <li><%= link_to "PointBox Home", root_path %></li>
-      <li><%= link_to "Rewards Shop", rewards_path %></li>
-      <li style="float:right">
-        <% if session[:user_id] %>
-          <%= link_to "Logout", logout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Login", login_path %>
-        <% end %>
-      </li>
-    </ul>
-
     <ul class="nav navbar-nav">
-    </ul>
+      <ul>
+        <% if session[:user_id] && User.find(session[:user_id]).admin? %>
+          <li><%= link_to "PointBox Home", root_path %></li>
+          <li><%= link_to "Rewards Shop", admin_rewards_path %></li>
+        <% else %>
+          <li><%= link_to "PointBox Home", root_path %></li>
+          <li><%= link_to "Rewards Shop", rewards_path %></li>
+        <% end %>
 
+        <% if session[:user_id] %>
+          <li style="float:right"><%= link_to "Logout", logout_path, method: :delete %></li>
+        <% else %>
+          <li style="float:right"><%= link_to "Login", login_path %></li>
+          <li style="float:right"><%= link_to "Register", new_user_path %></li>
+        <% end %>
+        </li>
+      </ul>
+    </ul>
   </div>
 </nav>

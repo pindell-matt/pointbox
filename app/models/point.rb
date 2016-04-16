@@ -3,6 +3,5 @@ class Point < ActiveRecord::Base
 
   validates :value, presence: true
   validates :user_id, presence: true
-  # validates :spent, presence:true
 
 end

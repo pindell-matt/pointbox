@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414232330) do
+ActiveRecord::Schema.define(version: 20160416223822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160414232330) do
   create_table "points", force: :cascade do |t|
     t.integer "value"
     t.integer "user_id"
-    t.boolean "spent"
   end
 
   add_index "points", ["user_id"], name: "index_points_on_user_id", using: :btree

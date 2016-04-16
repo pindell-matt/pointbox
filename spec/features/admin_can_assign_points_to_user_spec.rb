@@ -17,7 +17,6 @@ RSpec.feature "Admin can assign points to user" do
     fill_in "user id", with: user.id
     click_button "Assign"
 
-    expect(page).to have_content "#{user.username}"
-    expect(page).to have_content "Total Points: 5"
+    expect(page).to have_content "#{user.username}: 5 points"
   end
 end

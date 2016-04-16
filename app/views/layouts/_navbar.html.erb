@@ -4,7 +4,8 @@
       <ul>
         <% if session[:user_id] && User.find(session[:user_id]).admin? %>
           <li><%= link_to "PointBox Home", root_path %></li>
-          <li><%= link_to "Rewards Shop", admin_rewards_path %></li>
+          <li><%= link_to "Rewards Gallery", admin_rewards_path %></li>
+          <li><%= link_to "Assign Points" %>
         <% else %>
           <li><%= link_to "PointBox Home", root_path %></li>
           <li><%= link_to "Rewards Shop", rewards_path %></li>

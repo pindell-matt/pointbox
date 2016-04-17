@@ -3,11 +3,14 @@
     <ul class="nav navbar-nav">
       <ul>
         <% if session[:user_id] && User.find(session[:user_id]).admin? %>
-          <li><%= link_to "PointBox Home", root_path %></li>
+          <li><%= link_to "PointBox", root_path %></li>
           <li><%= link_to "Users Index", admin_users_path %></li>
           <li><%= link_to "Rewards Shop", admin_rewards_path %></li>
+        <% elsif session[:user_id] %>
+          <li><%= link_to "PointBox", user_path(current_user) %></li>
+          <li><%= link_to "Rewards Shop", rewards_path %></li>
         <% else %>
-          <li><%= link_to "PointBox Home", root_path %></li>
+          <li><%= link_to "PointBox", root_path %></li>
           <li><%= link_to "Rewards Shop", rewards_path %></li>
         <% end %>
 

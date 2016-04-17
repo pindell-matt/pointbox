@@ -18,4 +18,12 @@ class User < ActiveRecord::Base
      points.where("value < 0").sum(:value).abs
    end
 
+   def can_purchase?(reward)
+     total_points >= reward.value
+   end
+
+   def make_purchase(reward)
+     points.create(value: -reward.value)
+   end
+
 end

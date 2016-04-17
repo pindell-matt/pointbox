@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   root to: 'sessions#new'
 
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:show, :new, :create, :edit, :update]
   resources :rewards, only: [:show, :index]
-
-  resources :users do
-    resources :rewards, only: [:new, :create]
-  end
 
   namespace "admin" do
     resources :rewards

@@ -5,4 +5,8 @@ class Reward < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :value, presence: true
 
+  def name_and_value
+    "#{name}: #{value} points"
+  end
+
 end

@@ -1,0 +1,6 @@
+<h1>Purchase Reward</h1>
+
+<%= form_for @user do |f| %>
+  <%= collection_select(:user, :rewards, Reward.all, :id, :name_and_value, :prompt => true) %>
+  <%= f.submit "Purchase Reward" %>
+<% end %>

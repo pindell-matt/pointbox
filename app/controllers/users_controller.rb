@@ -19,6 +19,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    reward = Reward.find(params.dig(:user,:rewards))
+    if current_user.can_purchase?(reward)
+      current_user.make_purchase(reward)
+      current_user.rewards << reward
+      flash[:notice] = "Reward Purchased!"
+      redirect_to user_path
+    else
+      flash.now[:error] = "Insufficient Funds, Yo!"
+      render :edit
+    end
+  end
+
   private
 
   def user_params

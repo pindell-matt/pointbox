@@ -11,7 +11,7 @@ RSpec.feature "Admin creates reward" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Rewards Shop"
+    click_link "Rewards Gallery"
 
     click_button "Create New Reward"
 
@@ -33,7 +33,7 @@ RSpec.feature "Admin creates reward" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Rewards Shop"
+    click_link "Rewards Gallery"
 
     click_button "Create New Reward"
 

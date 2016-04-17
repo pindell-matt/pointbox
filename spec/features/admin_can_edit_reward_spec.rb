@@ -15,7 +15,7 @@ RSpec.feature "Admin can edit reward" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Rewards Shop"
+    click_link "Rewards Gallery"
     expect(page).to have_content("#{reward.name}: #{reward.value} points")
 
     click_button "Edit"

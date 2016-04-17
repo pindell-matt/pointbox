@@ -12,7 +12,7 @@ RSpec.feature "Admin can delete reward" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Rewards Shop"
+    click_link "Rewards Gallery"
     click_button "Delete"
 
     expect(page).to have_content("Rewards Index")

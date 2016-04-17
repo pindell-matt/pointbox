@@ -11,8 +11,8 @@ RSpec.feature "User logs in to website" do
 
       expect(page).to have_content("Welcome, Fakename")
       expect(page).to have_content("Logout")
-      expect(page).to have_content("My Spent Points")
-      expect(page).to have_content("My Unspent Points")
+      expect(page).to have_content("Points")
+      expect(page).to have_content("Spent")
     end
 
     scenario "existing user can login" do
@@ -25,8 +25,8 @@ RSpec.feature "User logs in to website" do
 
       expect(page).to have_content("Welcome, #{user.username}")
       expect(page).to have_content("Logout")
-      expect(page).to have_content("My Spent Points")
-      expect(page).to have_content("My Unspent Points")
+      expect(page).to have_content("Points")
+      expect(page).to have_content("Spent")
     end
   end
 

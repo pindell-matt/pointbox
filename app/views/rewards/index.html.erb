@@ -3,7 +3,5 @@
 <% @rewards.each do |reward| %>
     <div class="reward">
       <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %>
-      <%= link_to "Purchase" %>
-      <!-- <button type="button" name="buy_reward">Purchase</button> -->
     </div>
 <% end %>

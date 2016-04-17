@@ -1,7 +1,9 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<h3>My Spent Points: <%= @user.spent_points %></h3>
-<h3>My Unspent Points: <%= @user.total_points %></h3>
+<h3><%= link_to "Purchase A Reward", edit_user_path %></h3>
+
+<h3>Points: <%= @user.total_points %></h3>
+<h3>Spent: <%= @user.spent_points %></h3>
 
 <h3>My Rewards</h3>
 

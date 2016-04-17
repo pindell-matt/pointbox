@@ -2,13 +2,17 @@ Rails.application.routes.draw do
   root to: 'sessions#new'
 
   resources :users, only: [:show, :new, :create]
-
   resources :rewards, only: [:show, :index]
+
+  resources :users do
+    resources :rewards, only: [:new, :create]
+  end
 
   namespace "admin" do
     resources :rewards
-    resources :points, only: [:new, :create]
-    resources :users, only: [:show, :index]
+    resources :users, only: [:show, :index] do
+      resources :points, only: [:new, :create, :show]
+    end
   end
 
   get '/login', to: 'sessions#new'

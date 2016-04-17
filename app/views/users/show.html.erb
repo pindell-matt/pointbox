@@ -4,3 +4,4 @@
 <h3>My Unspent Points: <%= @user.total_points %></h3>
 
 <h3>My Rewards</h3>
+<%= link_to "Get Rewards", new_user_reward_path(@user) %>

@@ -7,8 +7,10 @@
 
 <h3>My Rewards</h3>
 
-<ul>
-  <% @user.rewards.each do |reward| %>
-    <li><%= reward.name %></li>
-  <% end %>
-</ul>
+<div class="user_rewards">
+  <ul>
+    <% @user.rewards.each do |reward| %>
+      <li><%= reward.name %></li>
+    <% end %>
+  </ul>
+</div>

@@ -16,7 +16,7 @@ RSpec.feature "Admin can assign points to user" do
     click_link user.username
     click_link "Add Points to #{user.username}"
 
-    fill_in "value", with: 5
+    fill_in "point_value", with: 5
     click_button "Assign"
 
     expect(page).to have_content "Points Assigned!"

@@ -1,8 +1,7 @@
 <h1>Assign Points</h1>
 
 <%= form_for @point, url: {action: "create"} do |f| %>
-  <%= render partial: "shared/errors", locals: { target: @point } %>
-  <%= f.text_field :value, placeholder: "value" %>
+  <%= number_field :point, :value, min: 1 %>
 
   <%= f.submit "Assign" %>
 <% end %>

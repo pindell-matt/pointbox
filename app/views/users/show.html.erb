@@ -1,6 +1,6 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<h3>My Spent Points</h3>
-<h3>My Unspent Points: <%= @user.points.sum(:value) %></h3>
+<h3>My Spent Points: <%= @user.spent_points %></h3>
+<h3>My Unspent Points: <%= @user.total_points %></h3>
 
 <h3>My Rewards</h3>

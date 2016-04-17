@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
    enum role: %w(default admin)
 
    def total_points
-     Point.find_by(user_id: id).value
+     points.sum(:value)
    end
+
+   def spent_points
+     points.where("value < 0").sum(:value).abs
+   end
+
 end

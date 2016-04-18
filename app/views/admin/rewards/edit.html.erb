@@ -1,5 +1,4 @@
 <h1>Edit <%= @reward.name %></h1>
-<!-- <%= render partial: 'form' %> -->
 
 <%= form_for @reward, url:{:controller=>'admin/rewards', :action=>'update'} do |f| %>
   <%= render partial: "shared/errors", locals: { target: @reward } %>

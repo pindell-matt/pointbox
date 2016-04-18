@@ -1,8 +1,0 @@
-<%= form_for @reward, url:{:controller=>'admin/rewards', :action=>'create'} do |f| %>
-  <%= render partial: "shared/errors", locals: { target: @reward } %>
-
-  <%= f.text_field :name, placeholder: "name" %>
-  <%= f.text_field :value, placeholder: "value" %>
-
-  <%= f.submit %>
-<% end %>

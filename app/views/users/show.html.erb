@@ -1,16 +1,23 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<h3><%= link_to "Purchase A Reward", edit_user_path(@user) %></h3>
+<%= button_to "Purchase A Reward", edit_user_path(@user), method: :get, class: "button" %></h3>
 
 <h3>Points: <%= @user.total_points %></h3>
 <h3>Spent: <%= @user.spent_points %></h3>
 
 <h3>My Rewards</h3>
 
-<div class="user_rewards">
-  <ul>
-    <% @user.rewards.each do |reward| %>
-      <li><%= reward.name %></li>
-    <% end %>
-  </ul>
-</div>
+<table style="width:25%">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Cost</th>
+  </tr>
+  <% @user.rewards.each do |reward| %>
+    <tr>
+      <td><%= reward.id %></td>
+      <td><%= link_to reward.name, reward_path(reward.id) %></td>
+      <td><%= reward.value %></td>
+    </tr>
+  <% end %>
+</table>

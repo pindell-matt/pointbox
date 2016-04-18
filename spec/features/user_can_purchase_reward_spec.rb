@@ -11,7 +11,7 @@ RSpec.feature "User can purchase reward with points" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Purchase A Reward"
+    click_button "Purchase A Reward"
 
     select('Trophy: 0 points', from: 'user_rewards')
 
@@ -36,7 +36,7 @@ RSpec.feature "User can purchase reward with points" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Purchase A Reward"
+    click_button "Purchase A Reward"
 
     select('Expensive Trophy: 1 points', from: 'user_rewards')
 
@@ -61,7 +61,7 @@ RSpec.feature "User can purchase reward with points" do
     fill_in "password", with: "password"
     click_button "Login"
 
-    click_link "Purchase A Reward"
+    click_button "Purchase A Reward"
 
     select('Expensive Trophy: 1 points', from: 'user_rewards')
 

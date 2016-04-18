@@ -1,5 +1,8 @@
 <h1>User <%= @user.id %>: <%= @user.username %></h1>
 
+<%= button_to "Edit #{@user.username}", edit_admin_user_path(@user), method: :get %>
+<%= button_to "Delete #{@user.username}", admin_user_path, method: :delete %>
+
 <h3>Total Points: <%= @user.total_points %></h3>
 <h3>Spent Points: <%= @user.spent_points %></h3>
 

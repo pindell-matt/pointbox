@@ -1,0 +1,8 @@
+<h3>Create New User</h3>
+
+<%= form_for @user, url: { :controller=>'admin/users', :action=>'create' } do |f| %>
+  <%= f.text_field :username, placeholder: "username" %>
+  <%= f.text_field :password, placeholder: "password" %>
+
+  <%= f.submit "Create User" %>
+<% end %>

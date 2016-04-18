@@ -38,6 +38,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     @user = User.find(params[:id])
+    @user.points.each { |point| point.destroy }
     @user.destroy
     redirect_to admin_users_path
   end

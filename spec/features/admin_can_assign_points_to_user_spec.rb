@@ -14,7 +14,7 @@ RSpec.feature "Admin can assign points to user" do
 
     click_link "Users Index"
     click_link user.username
-    click_link "Add Points to #{user.username}"
+    click_button "Add Points"
 
     fill_in "point_value", with: 5
     click_button "Assign"
@@ -37,7 +37,7 @@ RSpec.feature "Admin can assign points to user" do
 
     click_link "Users Index"
     click_link user.username
-    click_link "Add Points to #{user.username}"
+    click_button "Add Points"
 
     click_button "Assign"
 

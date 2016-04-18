@@ -20,7 +20,8 @@ RSpec.feature "Admin creates reward" do
     click_button "Create Reward"
 
     expect(page).to have_content("Reward Created!")
-    expect(page).to have_content("Test-Trophy: 5 points")
+    expect(page).to have_content("Test-Trophy")
+    expect(page).to have_content("5")
   end
 
   scenario "with invalid input" do

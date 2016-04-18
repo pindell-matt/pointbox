@@ -16,7 +16,8 @@ RSpec.feature "Admin can edit reward" do
     click_button "Login"
 
     click_link "Rewards Gallery"
-    expect(page).to have_content("#{reward.name}: #{reward.value} points")
+    expect(page).to have_content("#{reward.name}")
+    expect(page).to have_content("#{reward.value}")
 
     click_button "Edit"
 
@@ -24,6 +25,7 @@ RSpec.feature "Admin can edit reward" do
     fill_in "value", with: new_value
     click_button "Update Reward"
 
-    expect(page).to have_content("#{new_name}: #{new_value} points")
+    expect(page).to have_content("#{new_name}")
+    expect(page).to have_content("#{new_value}")
   end
 end

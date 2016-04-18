@@ -18,10 +18,7 @@ RSpec.feature "User can purchase reward with points" do
     click_button "Purchase Reward"
 
     expect(page).to have_content "Reward Purchased!"
-
-    within(".user_rewards") do
-      expect(page).to have_content "Trophy"
-    end
+    expect(page).to have_content "Trophy"
   end
 
   scenario "with 1 point reward" do
@@ -46,9 +43,7 @@ RSpec.feature "User can purchase reward with points" do
     expect(page).to have_content "Points: 0"
     expect(page).to have_content "Spent: 1"
 
-    within(".user_rewards") do
-      expect(page).to have_content "Expensive Trophy"
-    end
+    expect(page).to have_content "Expensive Trophy"
   end
 
   scenario "without enough points" do

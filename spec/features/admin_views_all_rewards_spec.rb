@@ -14,7 +14,8 @@ RSpec.feature "Admin views all rewards" do
 
     click_link "Rewards Gallery"
 
-    expect(page).to have_content("#{reward.name}: #{reward.value} points")
+    expect(page).to have_content("#{reward.name}")
+    expect(page).to have_content("#{reward.value}")
     expect(page).to have_button("Edit")
     expect(page).to have_button("Delete")
   end

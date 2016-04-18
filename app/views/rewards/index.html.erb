@@ -1,7 +1,16 @@
 <h1>Rewards Shop</h1>
 
-<% @rewards.each do |reward| %>
-    <div class="reward">
-      <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %> points
-    </div>
-<% end %>
+<table style="width:25%">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Value</th>
+  </tr>
+  <% @rewards.each do |reward| %>
+    <tr>
+      <td><%= reward.id %></td>
+      <td><%= link_to reward.name, reward_path(reward) %></td>
+      <td><%= reward.value %></td>
+    </tr>
+  <% end %>
+</table>

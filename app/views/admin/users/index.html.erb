@@ -2,8 +2,15 @@
 
 <%= button_to "Create New User", new_admin_user_path, method: :get %>
 
+
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.id %>: <%= link_to user.username, admin_user_path(user) %>: <%= user.total_points %> points</li>
+    <li>
+      <div class = "admin_user">
+        id <%= user.id %>: <%= link_to user.username, admin_user_path(user) %>: <%= user.total_points %> points
+        <%= link_to "Edit", edit_admin_user_path(user), method: :get %>
+        <%= link_to "Delete", admin_user_path(user), method: :delete %>
+      </div>
+    </li>
   <% end %>
 </ul>

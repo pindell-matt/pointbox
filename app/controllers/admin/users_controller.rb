@@ -38,7 +38,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     @user = User.find(params[:id])
-    @user.points.each { |point| point.destroy }
+    remove_user_points_and_rewards(@user)
     @user.destroy
     redirect_to admin_users_path
   end
@@ -47,6 +47,11 @@ class Admin::UsersController < Admin::BaseController
 
   def user_params
     params.require(:user).permit(:username, :password)
+  end
+
+  def remove_user_points_and_rewards(user)
+    UserReward.where(user_id: user.id).each { |user_id| user_id.destroy }
+    user.points.each { |point| point.destroy }
   end
 
 end

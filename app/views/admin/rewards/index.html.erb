@@ -5,8 +5,10 @@
 <% @rewards.each do |reward| %>
     <div class="reward">
       <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %> points
-      <div class="reward_buttons">
+      <div class="reward_button">
         <%= button_to "Edit", edit_admin_reward_path(reward), method: :get %>
+      </div>
+      <div class="reward_button">
         <%= button_to "Delete", admin_reward_path(reward), method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
     </div>

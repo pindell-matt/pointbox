@@ -2,6 +2,14 @@
 
 <h3>Total Points: <%= @user.total_points %></h3>
 <h3>Spent Points: <%= @user.spent_points %></h3>
-<h3><%= link_to "Add Points to #{@user.username}", new_admin_user_point_path(@user) %>
+
+<h3><%= link_to "Add Points to #{@user.username}", new_admin_user_point_path(@user) %></h3>
 
 <h3>Rewards</h3>
+<div class="user_rewards">
+  <ul>
+    <% @user.rewards.each do |reward| %>
+      <li><%= reward.name %></li>
+    <% end %>
+  </ul>
+</div>

@@ -40,6 +40,8 @@
   line-height: 20px;
 }
 
-.reward_buttons {
+.reward_button {
+  padding: 5px 0px;
   display: inline-block;
+  font-size: 10px;
 }

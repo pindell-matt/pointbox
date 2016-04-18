@@ -1,0 +1,7 @@
+<h1>Destory Points</h1>
+
+<%= form_for @point, url: {action: "create"} do |f| %>
+  <%= number_field :point, :value, min: 1 %>
+
+  <%= f.submit "Destroy" %>
+<% end %>
